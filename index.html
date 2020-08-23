@@ -249,7 +249,7 @@
     </section>--><!-- End Clients Section -->
 
     <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
+    <!-- <section id="services" class="services section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -305,7 +305,7 @@
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section> --><!-- End Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
     <!--<section id="portfolio" class="portfolio">
@@ -762,8 +762,8 @@
               </div> -->
               <div class="text-center mb-4"><button type="submit">Checking</button></div>
               <div class="loading">Loading</div>
-              <div id="patron-detail" class="col-xs-12"></div>
-              <div id="display" class="col-xs-12 mt-3"></div>
+              <div id="patron-detail" class="col-xs-5"></div>
+              <div id="display" class="col-xs-12 mt-2"></div>
             </form>
 
           </div>
@@ -898,10 +898,10 @@ return;
       getPatronDetail(name)
       .then(res =>{
         res.forEach(elements => {
-          var section = $('<section>', {id: "service", class: "services section-bg"}).appendTo("#patron-detail");
+          var section = $('<section>', {id: "service", class: "services"}).appendTo("#patron-detail");
           var container = $('<div>', {class: "container"}).appendTo(section);
           var rowdiv = $('<div>', {class: "row"}).appendTo(container);
-          var col = $('<div>', {class: "col-lg-5 col-md-6 justify-content-center"}).appendTo(container);
+          var col = $('<div>', {class: "d-flex justify-content-center align-items-center"}).appendTo(container);
           var icon_box = $('<div>', {class: "icon-box"}).appendTo(col);
           var icon = $('<div>', {class: "icon"}).appendTo(icon_box);
           var i1 = $('<i>', {class: "las la-book", style: "color: #e9bf06;"}).appendTo(icon);
