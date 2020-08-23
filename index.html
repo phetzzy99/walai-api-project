@@ -734,7 +734,7 @@
 
           </div> -->
 
-          <div class="col-lg-8 mt-5 mt-lg-0">
+          <div class="col-lg-8 mt-2 mt-lg-0">
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
               <div class="form-row justify-content-center">
@@ -760,7 +760,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div> -->
-              <div class="text-center"><button type="submit">Checking</button></div>
+              <div class="text-center mb-4"><button type="submit">Checking</button></div>
               <div class="loading">Loading</div>
               <div id="display" class="col-xs-12"></div>
             </form>
@@ -892,7 +892,17 @@ return;
 	getCountryName(name)
 	.then(result =>{
     console.log(result.length);
+    var table = $('<table>', {class: "table table-hover"}).appendTo('#display');
+        var thead = $('<thead>').appendTo(table);
+        var tr = $('<tr>').appendTo(thead);
+        var th1 = $('<th>', {text: "#"}).appendTo(tr);
+        var th2 = $('<th>', {text: "BARCODE"}).appendTo(tr);
+        var th3 = $('<th>', {text: "TITLE"}).appendTo(tr);
+        var th4 = $('<th>', {text: "Checkout"}).appendTo(tr);
+        var th5 = $('<th>', {text: "Overdue"}).appendTo(tr);
     if(result.length !== 0){
+      $i = 1;
+      $total = result.length;
       result.forEach(element => {
   			var card = $('<div>', {class: "card"}).appendTo('#display');
   			var country = $('<div>', {class: "country-info"}).appendTo(card);
@@ -909,23 +919,18 @@ return;
   			 	}).appendTo(text);
   			 	$('<span>', {text: element.code + " "}).appendTo(currencies);
   			 }) */
-
-        var table = $('<table>', {class: "table"}).appendTo('#display');
-        var thead = $('<thead>').appendTo(table);
-        var tr = $('<tr>').appendTo(thead);
-        var th1 = $('<th>', {text: "#"}).appendTo(tr);
-        var th2 = $('<th>', {text: "BARCODE"}).appendTo(tr);
-        var th3 = $('<th>', {text: "TITLE"}).appendTo(tr);
-        var th4 = $('<th>', {text: "Checkout"}).appendTo(tr);
-        var th5 = $('<th>', {text: "Overdue"}).appendTo(tr);
+         
         var tbody = $('<tbody>').appendTo(table);
         var tr2 = $('<tr>').appendTo(tbody);
-        $('<td>', {text: "1"}).appendTo(tr2);
+        $('<td>', {text: $i++}).appendTo(tr2);
         $('<td>', {text: element.BARCODE}).appendTo(tr2);
         $('<td>', {text: element.TITLE}).appendTo(tr2);
         $('<td>', {text: element.CHECKOUTDATE}).appendTo(tr2);
         $('<td>', {text: element.DUEDATE}).appendTo(tr2);
   		});
+      var divTotal = $('<div>', {class: "panel-footer text-right"}).appendTo('#display');
+      var spanTotal = $('<span>', {class: "pull-right"}).appendTo(divTotal);
+      $('<span>', {text: "# TOTAL : " + $total}).appendTo(spanTotal);
     }else {
       console.log("No Data");
           var card = $('<div>', {class: "card"}).appendTo('#display');
