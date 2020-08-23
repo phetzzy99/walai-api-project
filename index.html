@@ -896,19 +896,19 @@ return;
       result.forEach(element => {
   			var card = $('<div>', {class: "card"}).appendTo('#display');
   			var country = $('<div>', {class: "country-info"}).appendTo(card);
-  			// var img = $('<div>', {class: "img"}).appendTo(country);
-  			// $('<img>', {src: element.flag}).appendTo(img);
-  			// var text = $('<div>', {class: "right-text"}).appendTo(country);
-  			// $('<p>', {text: "Barcode: " + element.BARCODE}).appendTo(text);
-  			// $('<p>', {text: "Title: " + element.TITLE}).appendTo(text);
-  			// $('<p>', {text: "Checkout Date: " + element.CHECKOUTDATE}).appendTo(text);
-  			// $('<p>', {text: "Duedate: " + element.DUEDATE}).appendTo(text);
-  			// element.currencies.forEach(element =>{
-  			// 	var currencies = $('<div>', {
-  			// 		class: "currencies"
-  			// 	}).appendTo(text);
-  			// 	$('<span>', {text: element.code + " "}).appendTo(currencies);
-  			// })
+  			 /* var img = $('<div>', {class: "img"}).appendTo(country);
+  			 $('<img>', {src: element.flag}).appendTo(img);
+  			 var text = $('<div>', {class: "right-text"}).appendTo(country);
+  			 $('<p>', {text: "Barcode: " + element.BARCODE}).appendTo(text);
+  			 $('<p>', {text: "Title: " + element.TITLE}).appendTo(text);
+  			 $('<p>', {text: "Checkout Date: " + element.CHECKOUTDATE}).appendTo(text);
+  			 $('<p>', {text: "Duedate: " + element.DUEDATE}).appendTo(text);
+  			 element.currencies.forEach(element =>{
+  			 	var currencies = $('<div>', {
+  			 		class: "currencies"
+  			 	}).appendTo(text);
+  			 	$('<span>', {text: element.code + " "}).appendTo(currencies);
+  			 }) */
 
         var table = $('<table>', {class: "table"}).appendTo('#display');
         var thead = $('<thead>').appendTo(table);
