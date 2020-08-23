@@ -249,7 +249,7 @@
     </section>--><!-- End Clients Section -->
 
     <!-- ======= Services Section ======= -->
-    <!--<section id="services" class="services section-bg">
+    <section id="services" class="services section-bg">
       <div class="container">
 
         <div class="section-title">
@@ -305,7 +305,7 @@
         </div>
 
       </div>
-    </section>--><!-- End Services Section -->
+    </section><!-- End Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
     <!--<section id="portfolio" class="portfolio">
@@ -898,11 +898,20 @@ return;
       getPatronDetail(name)
       .then(res =>{
         res.forEach(elements => {
-          var card = $('<div>', {class: "card"}).appendTo('#patron-detail');
-          var text = $('<div>', {class: "right-text"}).appendTo(card);
-          $('<p>', {text: "รหัสสมาชิก: " + elements.BARCODE}).appendTo(text);
-          $('<p>', {text: "ชื่อ - สกุล: " + elements.FNAMETHAI + " " + elements.LNAMETHAI}).appendTo(text);
-          $('<p>', {text: "วันที่ทำรายการ: " + elements.INFORMDATE}).appendTo(text);
+          var section = $('<section>', {id: "service", class: "services section-bg"}).appendTo("#patron-detail");
+          var container = $('<div>', {class: "container"}).appendTo(section);
+          var rowdiv = $('<div>', {class: "row"}).appendTo(container);
+          var col = $('<div>', {class: "col-lg-5 col-md-6 justify-content-center"}).appendTo(container);
+          var icon_box = $('<div>', {class: "icon-box"}).appendTo(col);
+          var icon = $('<div>', {class: "icon"}).appendTo(icon_box);
+          var i1 = $('<i>', {class: "las la-book", style: "color: #e9bf06;"}).appendTo(icon);
+          var h4 = $('<h4>', {class: "title"}).appendTo(icon_box);
+          var ahref = $('<a>', {href: "", text: "HEADER"}).appendTo(h4);
+          var p = $('<p>', {class: "description"}).appendTo(icon_box);
+          $('<p>', {text: "รหัสสมาชิก: " + elements.BARCODE}).appendTo(p);
+          $('<p>', {text: "ชื่อ - สกุล: " + elements.FNAMETHAI + " " + elements.LNAMETHAI}).appendTo(p);
+          $('<p>', {text: "วันที่ทำรายการ: " + elements.INFORMDATE}).appendTo(p);
+
         });
       });
 
