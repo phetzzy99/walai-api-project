@@ -48,7 +48,7 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#about">Borrow</a></li>
+          <li><a href="history.html">History</a></li>
           <li><a href="#services">Overdue</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
@@ -954,7 +954,7 @@ return;
         var tbody = $('<tbody>').appendTo(table);
         var tr2 = $('<tr>').appendTo(tbody);
         $('<td>', {text: $i++}).appendTo(tr2);
-        $('<td>', {text: element.BARCODE}).appendTo(tr2);
+        $('<td>', {href: "", text: element.BARCODE}).appendTo(tr2);
         $('<td>', {text: element.TITLE}).appendTo(tr2);
         $('<td>', {text: element.CHECKOUTDATE}).appendTo(tr2);
         $('<td>', {text: element.DUEDATE}).appendTo(tr2);
